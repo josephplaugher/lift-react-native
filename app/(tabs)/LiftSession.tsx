@@ -68,14 +68,14 @@ export default function LiftSession() {
         <View className="row">
           <View className="col">
             <View>
-              <View className="d-flex justify-content-between align-items-center">
-                <Pressable className={`btn ${kg20 == 0 ? "btn-secondary" : "btn-primary"}`} onPress={() => kg20 == 0 ? setKg20(20) : setKg20(0)}><Text>20kg</Text></Pressable>
-                <Pressable className={`btn ${kg15 == 0 ? "btn-secondary" : "btn-primary"}`} onPress={() => kg15 == 0 ? setKg15(15) : setKg15(0)}><Text>15kg</Text></Pressable>
-                <Pressable className={`btn ${kg10 == 0 ? "btn-secondary" : "btn-primary"}`} onPress={() => kg10 == 0 ? setKg10(10) : setKg10(0)}><Text>10kg</Text></Pressable>
-                <Pressable className={`btn ${kg5 == 0 ? "btn-secondary" : "btn-primary"}`} onPress={() => kg5 == 0 ? setKg5(5) : setKg5(0)}><Text>5kg</Text></Pressable>
-                <Pressable className={`btn ${kg2_5 == 0 ? "btn-secondary" : "btn-primary"}`} onPress={() => kg2_5 == 0 ? setKg2_5(2.5) : setKg2_5(0)}><Text>2.5kg</Text></Pressable>
+              <View style={styles.weightSelectGroup}>
+                <Pressable style={kg20 == 0 ? styles.unselectedWeight : styles.selectedWeight} onPress={() => kg20 == 0 ? setKg20(20) : setKg20(0)}><Text style={kg20 == 0 ? styles.unselectedWeightFont : styles.selectedWeightFont}>20kg</Text></Pressable>
+                <Pressable style={kg15 == 0 ? styles.unselectedWeight : styles.selectedWeight} onPress={() => kg15 == 0 ? setKg15(15) : setKg15(0)}><Text style={kg15 == 0 ? styles.unselectedWeightFont : styles.selectedWeightFont}>15kg</Text></Pressable>
+                <Pressable style={kg10 == 0 ? styles.unselectedWeight : styles.selectedWeight} onPress={() => kg10 == 0 ? setKg10(10) : setKg10(0)}><Text style={kg10 == 0 ? styles.unselectedWeightFont : styles.selectedWeightFont}>10kg</Text></Pressable>
+                <Pressable style={kg5 == 0 ? styles.unselectedWeight : styles.selectedWeight} onPress={() => kg5 == 0 ? setKg5(5) : setKg5(0)}><Text style={kg5 == 0 ? styles.unselectedWeightFont : styles.selectedWeightFont}>5kg</Text></Pressable>
+                <Pressable style={kg2_5 == 0 ? styles.unselectedWeight : styles.selectedWeight} onPress={() => kg2_5 == 0 ? setKg2_5(2.5) : setKg2_5(0)}><Text style={kg2_5 == 0 ? styles.unselectedWeightFont : styles.selectedWeightFont}>2.5kg</Text></Pressable>
                 <View style={styles.inputGroup}>
-                  <Text style={styles.liftInputStyle}>{Weight}</Text>
+                  <Text style={styles.totalSelectedWeight}>{Weight}</Text>
                 </View>
               </View>
               <View style={styles.addSetForm}>
@@ -102,8 +102,8 @@ export default function LiftSession() {
                 <View style={styles.inputGroup}>
                   {userMsg ? <Text>{userMsg}</Text>
                     :
-                    <Pressable onPress={() => AddSets} >
-                      <Text>Add Sets</Text>
+                    <Pressable onPress={() => AddSets} style={styles.submitBtn}>
+                      <Text style={styles.submitBtn}>Add Sets</Text>
                     </Pressable>
                   }
                 </View>
