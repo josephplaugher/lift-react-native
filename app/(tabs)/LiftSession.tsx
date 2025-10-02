@@ -32,6 +32,10 @@ export default function LiftSession() {
     setWeight(w)
   }, [setWeight, kg20, kg15, kg10, kg5, kg2_5])
 
+  useEffect(()=> {
+    console.log("name: ", Name)
+  },[Name])
+  
   return (
     <>
       <View className="container-fluid py-0 px-2" style={styles.LiftHistoryTable}>
@@ -49,7 +53,7 @@ export default function LiftSession() {
         <View className="row pb-3" >
           <View className="col">
             <>
-              <Picker onValueChange={(e: any) => setName(e.target.value)}
+              <Picker onValueChange={(val: string) => setName(val)}
                 className={`form-control ${liftOptionsQuery.status == "pending" ? "bg-warning" : liftOptionsQuery.status == "error" ? "text-danger" : ""}`}>
                 {liftOptionsQuery.status === 'pending' ? (
                   <Picker.Item value="" label="Getting lift options..." />
