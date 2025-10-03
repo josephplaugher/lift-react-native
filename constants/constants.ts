@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
   },
   liftOptions: {
     bottom: 0,
-    position: "absolute"
+    position: "absolute",
   },
   inputGroup: {
     display: "flex",
@@ -81,6 +81,35 @@ export const styles = StyleSheet.create({
     borderColor: "#4a90e2",
     borderWidth: 2,
     fontSize: 16
-  }
+  },
+  modalOverlay: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  modalContent: {
+    backgroundColor: "white",
+    padding: 20,
+    borderRadius: 12,
+    alignItems: "center",
+    width: 250,
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
+    fontSize: 16,
+  },
+  button: {
+    marginTop: 10,
+    backgroundColor: "#2196F3",
+    borderRadius: 8,
+    paddingVertical: 8,
+    paddingHorizontal: 20,
+  },
+  buttonText: {
+    color: "white",
+    fontWeight: "bold",
+  },
 });
 
